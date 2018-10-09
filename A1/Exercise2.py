@@ -1,7 +1,4 @@
 import numpy
-# import matplotlib
-# matplotlib.use('Agg')
-# import matplotlib.pyplot as plt
 
 def loadHousing():
 	Xtrain = numpy.loadtxt(open("housing_X_train.csv", "rb"), delimiter=",")
@@ -31,29 +28,27 @@ def computeWLasso(X, y, Lambda, tolerance):
 
 	XT = numpy.matrix.transpose(X)
 
-	loop = 0
+	v = numpy.array([0]*len(y))
+	for k in range(0, len(W)):
+		v=numpy.add(XT[k]*W[k],v)
+	v = numpy.subtract(v,y)
+
 	while not allWReachedTol:
-		#print("loop", loop)
-		loop+=1
 		allWReachedTol = True
 		for j in range(0, len(W)):
-			#print("j:", j)
-			prevWj = W[j]
-			v = numpy.array([0]*len(y))
+			# print("j:", j)
 
-			for k in range(0, len(W)):
-				if j == k:
-					continue
-				v=numpy.add(XT[k]*W[k],v)
 			# print("v1: ", v)
 			# v = numpy.sum(XT*W[:, numpy.newaxis])
-			# v = numpy.subtract(v, XT[j]*W[j])
+			v = numpy.subtract(v, XT[j]*W[j])
 			# print("v2: ", v)
-			v = numpy.subtract(v,y)
 			a = numpy.sum(numpy.square(XT[j]))
 			b = -numpy.sum(numpy.multiply(XT[j], v))
 
+			prevWj = W[j]
 			W[j] = numpy.sign(b/a)*max(0, abs(b/a)-2*Lambda/a)
+
+			v = numpy.add(v, XT[j]*W[j])
 			if abs(prevWj - W[j]) > tolerance:
 				allWReachedTol = False
 	return W
@@ -125,7 +120,8 @@ def ridgeRegressionReport(Xtrain, ytrain, Xtest, ytest):
 		MSE_test = meanSquareError(Xtest, W, ytest)
 		# numpy turns W into a matrix instead of array when doing large matrix operations (i.e. > 1000 rows)
 		if isinstance(W[0], numpy.matrixlib.defmatrix.matrix):
-			nonzeros = numpy.count_nonzero(W)*100/len(W.getA1())
+			W = W.getA1()
+			nonzeros = numpy.count_nonzero(W[-1000:])*100/1000
 		else:
 			nonzeros = numpy.count_nonzero(W)*100/len(W)
 		print("{}\t{}\t\t{}\t\t\t{}\t{}".format(Lambda, round(MSE_train,10), round(MSE_validation,10), round(MSE_test,10), nonzeros))
@@ -142,7 +138,8 @@ def lassoRegressionReport(Xtrain, ytrain, Xtest, ytest):
 		MSE_test = meanSquareError(Xtest, W, ytest)
 		# numpy turns W into a matrix instead of array when doing large matrix operations (i.e. > 1000 rows)
 		if isinstance(W[0], numpy.matrixlib.defmatrix.matrix):
-			nonzeros = numpy.count_nonzero(W)*100/len(W.getA1())
+			W = W.getA1()
+			nonzeros = numpy.count_nonzero(W[-1000:])*100/1000
 		else:
 			nonzeros = numpy.count_nonzero(W)*100/len(W)
 		print("{}\t{}\t\t{}\t\t\t{}\t{}".format(Lambda, round(MSE_train,10), round(MSE_validation,10), round(MSE_test,10), nonzeros))
@@ -172,11 +169,6 @@ def Exercise2P5():
 	Xtrain, Xtest = addRandomFeatures(1000, Xtrain, Xtest)
 	lassoRegressionReport(Xtrain, ytrain, Xtest, ytest)
 
-# Exercise2P1()
-# Exercise2P2()
-# Exercise2P3()
-Exercise2P4()
-Exercise2P5()
 
 
 

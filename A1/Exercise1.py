@@ -45,8 +45,11 @@ def FlawedPerceptron(X, y, w, b, max_pass=500):
 	return w,b,mistake
 
 
-def Exercise1P1(X, y, w, b, max_pass=500):
-	w,b,mistakes = Perceptron(X, y, w, b, max_pass)
+def Exercise1P1():
+	X,y = loadSpambase()
+	w = numpy.zeros(len(X[0]))
+	b = 0
+	w,b,mistakes = Perceptron(X, y, w, b, 500)
 	plotGraph(
 		mistakes,
 		xlabel="Passes",
@@ -55,8 +58,11 @@ def Exercise1P1(X, y, w, b, max_pass=500):
 		filename="Exercise1Q1.png"
 	)
 
-def Exercise1P2(X, y, w, b, max_pass=500):
-	w,b,mistakes = FlawedPerceptron(X, y, w, b, max_pass)
+def Exercise1P2():
+	X,y = loadSpambase()
+	w = numpy.zeros(len(X[0]))
+	b = 0
+	w,b,mistakes = FlawedPerceptron(X, y, w, b, 500)
 	plotGraph(
 		mistakes,
 		xlabel="Passes",
@@ -67,10 +73,13 @@ def Exercise1P2(X, y, w, b, max_pass=500):
 		ymax=max(mistakes)*1.1
 	)
 
-def Exercise1P4(X, y, w,b, max_pass=500):
+def Exercise1P4():
+	X,y = loadSpambase()
+	w = numpy.zeros(len(X[0]))
+	b = 0
 	for i in range(0, 5):
 		Xi, yi = shuffle(X,y)
-		w1,b1,mistakes = Perceptron(Xi, yi, w, b, max_pass)
+		w1,b1,mistakes = Perceptron(Xi, yi, w, b, 500)
 		plotGraph(mistakes,
 			xlabel="Passes",
 			ylabel="Mistakes",
@@ -82,14 +91,5 @@ def loadSpambase():
 	X = numpy.matrix.transpose(numpy.loadtxt(open("spambase_X.csv", "rb"), delimiter=","))
 	y = numpy.loadtxt(open("spambase_y.csv", "rb"), delimiter=",")
 	return X,y
-
-X,y = loadSpambase()
-w = numpy.zeros(len(X[0]))
-b = 0
-
-#Exercise1P1(X,y,w,b)
-Exercise1P2(X,y,w,b)
-#Exercise1P4(X,y,w,b)
-
 
 
