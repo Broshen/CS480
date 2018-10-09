@@ -1,0 +1,72 @@
+submission1: 92.633
+submission2: 94.2
+
+base classfiers results:
+perceptron - 1000 : 0.8635
+kNN - 15 : 0.944
+logistic regression : 0.914
+decision tree : 0.826
+bagging : 0.901
+boosting : 0.626
+random forest : 0.923
+support vector machines : 0.
+
+
+Bagging w/ kNN, k=6, n=20: 0.958
+Bagging kNN, k=6, n=50: 0.959
+Bagging w/ kNN, k=6, n=150: 0.9575
+
+AdaBoost w/ SVC, n=20: 0.898
+AdaBoost, SVC, n=n=50: 0.8985
+
+
+
+kNN results on 10k rows subset:
+KNN, uniform, k=1: 0.9595
+KNN, distance, k=1: 0.9595
+KNN, uniform, k=2: 0.947
+KNN, distance, k=2: 0.9595
+KNN, uniform, k=3: 0.9545
+KNN, distance, k=3: 0.9585
+KNN, uniform, k=4: 0.955
+KNN, distance, k=4: 0.9605
+KNN, uniform, k=5: 0.956
+KNN, distance, k=5: 0.959
+KNN, uniform, k=6: 0.9555
+KNN, distance, k=6: 0.9615 ****
+KNN, uniform, k=7: 0.9555
+KNN, distance, k=7: 0.9575
+KNN, uniform, k=8: 0.9535
+KNN, distance, k=8: 0.956
+KNN, uniform, k=9: 0.9535
+KNN, distance, k=9: 0.9555
+KNN, uniform, k=10: 0.951
+KNN, distance, k=10: 0.9555
+KNN, uniform, k=11: 0.95
+KNN, distance, k=11: 0.952
+KNN, uniform, k=12: 0.948
+KNN, distance, k=12: 0.953
+KNN, uniform, k=13: 0.948
+KNN, distance, k=13: 0.951
+KNN, uniform, k=14: 0.945
+KNN, distance, k=14: 0.949
+KNN, uniform, k=15: 0.944
+KNN, distance, k=15: 0.946
+KNN, uniform, k=16: 0.944
+KNN, distance, k=16: 0.9465
+KNN, uniform, k=17: 0.9435
+KNN, distance, k=17: 0.946
+KNN, uniform, k=18: 0.9455
+KNN, distance, k=18: 0.947
+KNN, uniform, k=19: 0.9455
+KNN, distance, k=19: 0.947
+KNN, uniform, k=20: 0.945
+KNN, distance, k=20: 0.9475
+KNN, uniform, k=21: 0.946
+KNN, distance, k=21: 0.9465
+KNN, uniform, k=22: 0.9445
+KNN, distance, k=22: 0.9465
+KNN, uniform, k=23: 0.9445
+KNN, distance, k=23: 0.947
+KNN, uniform, k=24: 0.9425
+KNN, distance, k=24: 0.9465
