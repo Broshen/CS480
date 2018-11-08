@@ -1,72 +1,211 @@
-submission1: 92.633
-submission2: 94.2
+things to try:
+svcs/perceptrons on each digit
+look into preprocessing?
+	downsampling/downscaling
+	mean scaling
+
+look into tuning hyperparameters
+look into different distance metrics
+	shape context
+	tangent distance
+
+
+submission1: 									92.633
+100k boosted trees, 17 leaves:					92.933
+submission2: 									94.2
+KNN 6, euclidian distance: 						94.566
+KNN 6, downsampled: 							95.333
+KNN6_Small:			training: 96.15		kaggle:	95.366
+Bagging KNN6 Small: training: 96.1		kaggle: 95.2
+KNN 6 deskewed, normalized:						97.4
+Bagging KNN 6:		training: 97.19		kaggle:	97.533
+KNN 6 deskewed	:								97.533
+KNN 6: 				training: 97.316	kaggle:	97.633
+top 7 combined:									97.733
+KNN 6, L3:										97.866
+KNN 6, L3, gaussian blurred:  98.083			98.0
+top 6 combined:									98.066
 
 base classfiers results:
-perceptron - 1000 : 0.8635
-kNN - 15 : 0.944
-logistic regression : 0.914
-decision tree : 0.826
-bagging : 0.901
-boosting : 0.626
-random forest : 0.923
-support vector machines : 0.
+perceptron - 1000 : 		0.8635		vs BW only: 0.855
+kNN - 15 : 					0.944		vs BW only: 0.9415
+logistic regression : 		0.914		vs BW only: 0.9045
+decision tree : 			0.826		vs BW only: 0.8445
+bagging : 					0.901		vs BW only: 0.901
+boosting : 					0.626		vs BW only: 0.6915
+random forest : 			0.923		vs BW only: 0.922
+support vector machines : 	0.8985		vs BW only: 0.8955
 
 
 Bagging w/ kNN, k=6, n=20: 0.958
 Bagging kNN, k=6, n=50: 0.959
 Bagging w/ kNN, k=6, n=150: 0.9575
 
+Bagging, SVC, n=20: 0.8975 taking 0:02:51 to fit & predict 10000 rows
+Bagging, SVC, n=50 score: 0.898 taking 0:06:22 to fit & predict 10000 rows
+
+Bagging, Logistic Regression, n=20: 0.9155 taking 0:03:19 to fit & predict 10000 rows
+Bagging, Logistic Regression, n=50 score: 0.9125 taking 0:07:03 to fit & predict 10000 rows
+
+Bagging 50 Random Forests, n=500 score: 0.951 taking 1:17:14 to fit & predict 10000 rows
+
+
+
 AdaBoost w/ SVC, n=20: 0.898
-AdaBoost, SVC, n=n=50: 0.8985
+AdaBoost, SVC, n=50: 0.8985
+
+
+
+Random Forest, n=500 score: 0.954 taking 0:00:35 to fit & predict 10000 rows
+Random Forest, n=5000 score: 0.956 taking 0:12:37 to fit & predict 10000 rows
 
 
 
 kNN results on 10k rows subset:
-KNN, uniform, k=1: 0.9595
-KNN, distance, k=1: 0.9595
-KNN, uniform, k=2: 0.947
-KNN, distance, k=2: 0.9595
-KNN, uniform, k=3: 0.9545
-KNN, distance, k=3: 0.9585
-KNN, uniform, k=4: 0.955
-KNN, distance, k=4: 0.9605
-KNN, uniform, k=5: 0.956
-KNN, distance, k=5: 0.959
-KNN, uniform, k=6: 0.9555
-KNN, distance, k=6: 0.9615 ****
-KNN, uniform, k=7: 0.9555
-KNN, distance, k=7: 0.9575
-KNN, uniform, k=8: 0.9535
-KNN, distance, k=8: 0.956
-KNN, uniform, k=9: 0.9535
-KNN, distance, k=9: 0.9555
-KNN, uniform, k=10: 0.951
-KNN, distance, k=10: 0.9555
-KNN, uniform, k=11: 0.95
-KNN, distance, k=11: 0.952
-KNN, uniform, k=12: 0.948
-KNN, distance, k=12: 0.953
-KNN, uniform, k=13: 0.948
-KNN, distance, k=13: 0.951
-KNN, uniform, k=14: 0.945
-KNN, distance, k=14: 0.949
-KNN, uniform, k=15: 0.944
-KNN, distance, k=15: 0.946
-KNN, uniform, k=16: 0.944
-KNN, distance, k=16: 0.9465
-KNN, uniform, k=17: 0.9435
-KNN, distance, k=17: 0.946
-KNN, uniform, k=18: 0.9455
-KNN, distance, k=18: 0.947
-KNN, uniform, k=19: 0.9455
-KNN, distance, k=19: 0.947
-KNN, uniform, k=20: 0.945
-KNN, distance, k=20: 0.9475
-KNN, uniform, k=21: 0.946
-KNN, distance, k=21: 0.9465
-KNN, uniform, k=22: 0.9445
-KNN, distance, k=22: 0.9465
-KNN, uniform, k=23: 0.9445
-KNN, distance, k=23: 0.947
-KNN, uniform, k=24: 0.9425
-KNN, distance, k=24: 0.9465
+KNN, uniform, k=1: 0.9595				on BW only: 0.9495		deskewed 0.955		deskewed, normalized: 0.9525
+KNN, distance, k=1: 0.9595				on BW only: 0.9495		deskewed 0.955		deskewed, normalized: 0.9525
+KNN, uniform, k=2: 0.947				on BW only: 0.9445		deskewed 0.9485		deskewed, normalized: 0.9505
+KNN, distance, k=2: 0.9595				on BW only: 0.9495		deskewed 0.955		deskewed, normalized: 0.9525
+KNN, uniform, k=3: 0.9545				on BW only: 0.9545		deskewed 0.9545		deskewed, normalized: 0.9535
+KNN, distance, k=3: 0.9585				on BW only: 0.9535		deskewed 0.9545		deskewed, normalized: 0.955
+KNN, uniform, k=4: 0.955				on BW only: 0.954		deskewed 0.953		deskewed, normalized: 0.9545
+KNN, distance, k=4: 0.9605				on BW only: 0.956		deskewed 0.955		deskewed, normalized: 0.9575
+KNN, uniform, k=5: 0.956				on BW only: 0.951		deskewed 0.956		deskewed, normalized: 0.9515
+KNN, distance, k=5: 0.959				on BW only: 0.9505		deskewed 0.9555		deskewed, normalized: 0.9535
+KNN, uniform, k=6: 0.9555				on BW only: 0.948		deskewed 0.9515		deskewed, normalized: 0.95
+KNN, distance, k=6: 0.9615 ****			on BW only: 0.9515		deskewed 0.9555		deskewed, normalized: 0.9535
+KNN, uniform, k=7: 0.9555				on BW only: 0.95		deskewed 0.951		deskewed, normalized: 0.9495
+KNN, distance, k=7: 0.9575				on BW only: 0.9495		deskewed 0.954		deskewed, normalized: 0.9485
+KNN, uniform, k=8: 0.9535				on BW only: 0.951		deskewed 0.951		deskewed, normalized: 0.951
+KNN, distance, k=8: 0.956				on BW only: 0.9525		deskewed 0.9535		deskewed, normalized: 0.9535
+KNN, uniform, k=9: 0.9535				on BW only: 0.948		deskewed 0.9495		deskewed, normalized: 0.948
+KNN, distance, k=9: 0.9555				on BW only: 0.9515		deskewed 0.951		deskewed, normalized: 0.9505
+KNN, uniform, k=10: 0.951				on BW only: 0.951		deskewed 0.948		deskewed, normalized: 0.9465
+KNN, distance, k=10: 0.9555				on BW only: 0.953		deskewed 0.952		deskewed, normalized: 0.95
+KNN, uniform, k=11: 0.95				on BW only: 0.947		deskewed 0.9495		deskewed, normalized: 0.946
+KNN, distance, k=11: 0.952				on BW only: 0.95		deskewed 0.953		deskewed, normalized: 0.9475
+KNN, uniform, k=12: 0.948				on BW only: 0.947		deskewed 0.9465		deskewed, normalized: 0.9445
+KNN, distance, k=12: 0.953				on BW only: 0.949		deskewed 0.95		deskewed, normalized: 0.948
+KNN, uniform, k=13: 0.948				on BW only: 0.9455		deskewed 0.945		deskewed, normalized: 0.944
+KNN, distance, k=13: 0.951				on BW only: 0.947		deskewed 0.948		deskewed, normalized: 0.9455
+KNN, uniform, k=14: 0.945				on BW only: 0.9425		deskewed 0.9445		deskewed, normalized: 0.944
+KNN, distance, k=14: 0.949				on BW only: 0.944		deskewed 0.947		deskewed, normalized: 0.947
+KNN, uniform, k=15: 0.944				on BW only: 0.9415		deskewed 0.9435		deskewed, normalized: 0.942
+KNN, distance, k=15: 0.946				on BW only: 0.9425		deskewed 0.947		deskewed, normalized: 0.945
+KNN, uniform, k=16: 0.944				on BW only: 0.942		deskewed 0.9415		deskewed, normalized: 0.939
+KNN, distance, k=16: 0.9465				on BW only: 0.945		deskewed 0.9475		deskewed, normalized: 0.942
+KNN, uniform, k=17: 0.9435				on BW only: 0.942		deskewed 0.9435		deskewed, normalized: 0.9405
+KNN, distance, k=17: 0.946				on BW only: 0.943		deskewed 0.946		deskewed, normalized: 0.9415
+KNN, uniform, k=18: 0.9455				on BW only: 0.9425		deskewed 0.9405		deskewed, normalized: 0.9375
+KNN, distance, k=18: 0.947				on BW only: 0.9445		deskewed 0.9435		deskewed, normalized: 0.9395
+KNN, uniform, k=19: 0.9455				on BW only: 0.942		deskewed 0.94		deskewed, normalized: 0.937
+KNN, distance, k=19: 0.947				on BW only: 0.944		deskewed 0.941		deskewed, normalized: 0.9395
+KNN, uniform, k=20: 0.945				on BW only: 0.941		deskewed 0.9375		deskewed, normalized: 0.937
+KNN, distance, k=20: 0.9475				on BW only: 0.943		deskewed 0.9405		deskewed, normalized: 0.938
+KNN, uniform, k=21: 0.946				on BW only: 0.9395		deskewed 0.9385		deskewed, normalized: 0.9385
+KNN, distance, k=21: 0.9465				on BW only: 0.941		deskewed 0.94		deskewed, normalized: 0.938
+KNN, uniform, k=22: 0.9445				on BW only: 0.94		deskewed 0.9355		deskewed, normalized: 0.9335
+KNN, distance, k=22: 0.9465				on BW only: 0.9405		deskewed 0.9375		deskewed, normalized: 0.9355
+KNN, uniform, k=23: 0.9445				on BW only: 0.939		deskewed 0.9355		deskewed, normalized: 0.9325
+KNN, distance, k=23: 0.947				on BW only: 0.94		deskewed 0.9385		deskewed, normalized: 0.9345
+KNN, uniform, k=24: 0.9425				on BW only: 0.939		deskewed 0.932		deskewed, normalized: 0.9355
+KNN, distance, k=24: 0.9465				on BW only: 0.939		deskewed 0.936		deskewed, normalized: 0.9365
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

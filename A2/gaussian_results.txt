@@ -1,0 +1,148 @@
+lambda: 0		support vector machines score: 0.899
+lambda: 0.001	support vector machines score: 0.898
+lambda: 0.01	support vector machines score: 0.8965
+lambda: 0.1		support vector machines score: 0.898
+lambda: 1		support vector machines score: 0.9195
+lambda: 1.5		support vector machines score: 0.923	****
+lambda: 2		support vector machines score: 0.9195
+lambda: 2.5		support vector machines score: 0.9175
+lambda: 3		support vector machines score: 0.9085
+lambda: 3.5		support vector machines score: 0.9005
+lambda: 4		support vector machines score: 0.8925
+lambda: 7		support vector machines score: 0.8035
+lambda: 10		support vector machines score: 0.6235
+
+lambda: 0		random forest score: 0.914
+lambda: 0.001	random forest score: 0.914
+lambda: 0.01	random forest score: 0.922
+lambda: 0.1		random forest score: 0.917
+lambda: 1		random forest score: 0.924
+lambda: 1.5		random forest score: 0.927	****
+lambda: 2		random forest score: 0.9025
+lambda: 2.5		random forest score: 0.8935
+lambda: 3		random forest score: 0.8775
+lambda: 3.5		random forest score: 0.8555
+lambda: 4		random forest score: 0.8385
+lambda: 7		random forest score: 0.6575
+lambda: 10		random forest score: 0.438
+
+lambda: 0		boosting score: 0.626
+lambda: 0.001	boosting score: 0.626
+lambda: 0.01	boosting score: 0.626
+lambda: 0.1		boosting score: 0.626
+lambda: 1		boosting score: 0.6105
+lambda: 1.5		boosting score: 0.6475	****
+lambda: 2		boosting score: 0.4335
+lambda: 2.5		boosting score: 0.5855
+lambda: 3		boosting score: 0.5315
+lambda: 3.5		boosting score: 0.5145
+lambda: 4		boosting score: 0.592
+lambda: 7		boosting score: 0.467
+lambda: 10		boosting score: 0.3005
+
+lambda: 0		bagging score: 0.8985
+lambda: 0.001	bagging score: 0.8955
+lambda: 0.01	bagging score: 0.9005
+lambda: 0.1		bagging score: 0.9005
+lambda: 1		bagging score: 0.912
+lambda: 1.5		bagging score: 0.9125	****
+lambda: 2		bagging score: 0.9005
+lambda: 2.5		bagging score: 0.886
+lambda: 3		bagging score: 0.858
+lambda: 3.5		bagging score: 0.84
+lambda: 4		bagging score: 0.8145
+lambda: 7		bagging score: 0.65
+lambda: 10		bagging score: 0.463
+
+lambda: 0		decision tree score: 0.8305
+lambda: 0.001	decision tree score: 0.827
+lambda: 0.01	decision tree score: 0.8305
+lambda: 0.1		decision tree score: 0.8305
+lambda: 1		decision tree score: 0.8555	****
+lambda: 1.5		decision tree score: 0.833
+lambda: 2		decision tree score: 0.825
+lambda: 2.5		decision tree score: 0.802
+lambda: 3		decision tree score: 0.782
+lambda: 3.5		decision tree score: 0.768
+lambda: 4		decision tree score: 0.711
+lambda: 7		decision tree score: 0.503
+lambda: 10		decision tree score: 0.348
+
+lambda: 0		logistic regression score: 0.914
+lambda: 0.001	logistic regression score: 0.914
+lambda: 0.01	logistic regression score: 0.914
+lambda: 0.1		logistic regression score: 0.914
+lambda: 1		logistic regression score: 0.921	****
+lambda: 1.5		logistic regression score: 0.919
+lambda: 2		logistic regression score: 0.913
+lambda: 2.5		logistic regression score: 0.9045
+lambda: 3		logistic regression score: 0.8945
+lambda: 3.5		logistic regression score: 0.886
+lambda: 4		logistic regression score: 0.8665
+lambda: 7		logistic regression score: 0.758
+lambda: 10		logistic regression score: 0.522
+
+lambda: 0		kNN, k=15 score: 0.944
+lambda: 0.001	kNN, k=15 score: 0.944
+lambda: 0.01	kNN, k=15 score: 0.944
+lambda: 0.1		kNN, k=15 score: 0.944
+lambda: 1		kNN, k=15 score: 0.952	****
+lambda: 1.5		kNN, k=15 score: 0.9445
+lambda: 2		kNN, k=15 score: 0.9335
+lambda: 2.5		kNN, k=15 score: 0.912
+lambda: 3		kNN, k=15 score: 0.891
+lambda: 3.5		kNN, k=15 score: 0.8715
+lambda: 4		kNN, k=15 score: 0.852
+lambda: 7		kNN, k=15 score: 0.6695
+lambda: 10		kNN, k=15 score: 0.4305
+
+lambda: 0 		kNN, k=6 L3 score: 0.9615
+lambda: 0.001 	kNN, k=6 L3 score: 0.9615
+lambda: 0.01 	kNN, k=6 L3 score: 0.9615
+lambda: 0.1 	kNN, k=6 L3 score: 0.9615
+lambda: 0.7 	kNN, k=6 L3 score: 0.967
+lambda: 0.8 	kNN, k=6 L3 score: 0.9675
+lambda: 0.9 	kNN, k=6 L3 score: 0.967
+lambda: 1 		kNN, k=6 L3 score: 0.968	****
+lambda: 1.1 	kNN, k=6 L3 score: 0.9675
+lambda: 1.2 	kNN, k=6 L3 score: 0.9665
+lambda: 1.3 	kNN, k=6 L3 score: 0.9655
+lambda: 1.4 	kNN, k=6 L3 score: 0.964
+lambda: 1.5 	kNN, k=6 L3 score: 0.9635
+lambda: 1.6 	kNN, k=6 L3 score: 0.9605
+lambda: 1.7 	kNN, k=6 L3 score: 0.96
+lambda: 1.8 	kNN, k=6 L3 score: 0.9565
+lambda: 1.9 	kNN, k=6 L3 score: 0.951
+lambda: 2	 	kNN, k=6 L3 score: 0.9465
+lambda: 2.5 	kNN, k=6 L3 score: 0.9265
+lambda: 3 		kNN, k=6 L3 score: 0.904
+lambda: 3.5 	kNN, k=6 L3 score: 0.8755
+lambda: 4 		kNN, k=6 L3 score: 0.851
+lambda: 7 		kNN, k=6 L3 score: 0.678
+lambda: 10 		kNN, k=6 L3 score: 0.425
+
+
+
+lambda: 0		perceptron score: 0.8805
+lambda: 0.001	perceptron score: 0.8805
+lambda: 0.01	perceptron score: 0.8805
+lambda: 0.1		perceptron score: 0.8805
+lambda: 1		perceptron score: 0.889
+lambda: 1.5		perceptron score: 0.893
+lambda: 2		perceptron score: 0.9025	**** 
+lambda: 2.5		perceptron score: 0.8795
+lambda: 3		perceptron score: 0.88
+lambda: 3.5		perceptron score: 0.885
+lambda: 4		perceptron score: 0.8815
+lambda: 7		perceptron score: 0.7325
+lambda: 10		perceptron score: 0.578
+
+
+
+
+
+
+
+
+
+
